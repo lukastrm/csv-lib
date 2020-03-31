@@ -13,7 +13,8 @@ package com.trm.csvlib.io;
  */
 public class CSVFormat {
 
-    public static final CSVFormat DEFAULT = new CSVFormat('\"', ',');
+    public static final CSVFormat DEFAULT = new CSVFormat('"', ',');
+    public static final CSVFormat MICROSOFT_EXCEL = new CSVFormat('"', ';');
 
     /**
      * the enclosing character used by the format to enclose special characters
@@ -28,8 +29,8 @@ public class CSVFormat {
     /**
      * Constructor without arguments.
      *
-     * @param enclosingCharacter
-     * @param separator
+     * @param enclosingCharacter the enclosing character used to wrap generic contents with control characters in it
+     * @param separator the character used to separate two adjacent values
      */
     public CSVFormat(char enclosingCharacter, char separator) {
         this.enclosingCharacter = enclosingCharacter;
