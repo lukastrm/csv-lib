@@ -92,7 +92,7 @@ public class CSVReader {
                 } else {
                     if (separated && read == format.enclosingCharacter) {
                         enclosing = true;
-                    } else {
+                    } else if (read != 0xFEFF) {
                         builder.append(read);
                     }
 
@@ -101,9 +101,13 @@ public class CSVReader {
             }
         }
 
-        row.addCellValue(builder.toString(), new CellAddress(rowIndex, cellIndex));
-        rowIndex++;
-        return row;
+        if (eof) {
+            return null;
+        } else {
+            row.addCellValue(builder.toString(), new CellAddress(rowIndex, cellIndex));
+            rowIndex++;
+            return row;
+        }
     }
 
     private boolean read() throws IOException {
