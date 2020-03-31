@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  Copyright (c) 2020, trm factory, Lukas Trommer. All rights reserved.
+  ~  This software is provided under a separate licence agreement only.
+  ~  Further usage, modification and/or redistribution without the written permission of the author(s)
+  ~  is strictly prohibited.
+  -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -21,5 +28,11 @@
         </plugins>
     </build>
 
-
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub trm-factory Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/trm-factory/csv-lib</url>
+        </repository>
+    </distributionManagement>
 </project>

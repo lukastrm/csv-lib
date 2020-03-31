@@ -1,8 +1,10 @@
 /*
- * Copyright (c) 2020, trm factory, Lukas Trommer. All rights reserved.
- * This software is provided under a separate licence agreement only. Further usage, modification and/or redistribution
- * without the written permission of the author(s) is strictly prohibited.
+ *  Copyright (c) 2020, trm factory, Lukas Trommer. All rights reserved.
+ *  This software is provided under a separate licence agreement only.
+ *  Further usage, modification and/or redistribution without the written permission of the author(s)
+ *  is strictly prohibited.
  */
+
 package com.trm.csvlib.io;
 
 import com.trm.csvlib.model.*;
@@ -39,7 +41,6 @@ public class CSVReader {
     public <T extends TableDecoder<R>, R extends RowDecoder> T readTable(TableDecoderFactory<T> tableDecoderFactory, RowDecoderFactory<R> rowDecoderFactory) throws IOException, CSVException {
         T tableDescriptor = tableDecoderFactory.newTable();
         R row;
-        int index = 0;
 
         while ((row = readRow(rowDecoderFactory)) != null) {
             tableDescriptor.addRow(row);

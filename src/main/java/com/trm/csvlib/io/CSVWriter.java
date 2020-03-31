@@ -1,8 +1,10 @@
 /*
- * Copyright (c) 2020, trm factory, Lukas Trommer. All rights reserved.
- * This software is provided under a separate licence agreement only. Further usage, modification and/or redistribution
- * without the written permission of the author(s) is strictly prohibited.
+ *  Copyright (c) 2020, trm factory, Lukas Trommer. All rights reserved.
+ *  This software is provided under a separate licence agreement only.
+ *  Further usage, modification and/or redistribution without the written permission of the author(s)
+ *  is strictly prohibited.
  */
+
 package com.trm.csvlib.io;
 
 import com.trm.csvlib.model.RowEncoder;
@@ -24,8 +26,8 @@ public class CSVWriter {
     private final CSVFormat format;
     private boolean didWriteRow;
 
-    public CSVWriter(OutputStream writer) {
-        this.writer = new OutputStreamWriter(writer);
+    public CSVWriter(OutputStream stream) {
+        this.writer = new OutputStreamWriter(stream);
         this.format = CSVFormat.DEFAULT;
     }
 

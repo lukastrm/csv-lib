@@ -1,8 +1,10 @@
 /*
- * Copyright (c) 2020, trm factory, Lukas Trommer. All rights reserved.
- * This software is provided under a separate licence agreement only. Further usage, modification and/or redistribution
- * without the written permission of the author(s) is strictly prohibited.
+ *  Copyright (c) 2020, trm factory, Lukas Trommer. All rights reserved.
+ *  This software is provided under a separate licence agreement only.
+ *  Further usage, modification and/or redistribution without the written permission of the author(s)
+ *  is strictly prohibited.
  */
+
 package com.trm.csvlib.io;
 
 import com.trm.csvlib.data.StringDataRow;
@@ -11,6 +13,7 @@ import com.trm.csvlib.model.*;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 
 /**
  * @author Lukas Trommer
@@ -23,6 +26,10 @@ public class SimpleCSVReader extends CSVReader {
 
     public SimpleCSVReader(InputStream stream) {
         super(stream);
+    }
+
+    public SimpleCSVReader(InputStream stream, Charset charset, CSVFormat format) {
+        super(stream, charset, format);
     }
 
     public StringDataTable readTable() throws CSVException, IOException {
